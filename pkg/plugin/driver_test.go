@@ -1122,6 +1122,7 @@ func TestMutateResponse(t *testing.T) {
 	assert.Equal(t, nil, err)
 	conn, close := setupTest(t, "col1 JSON", clickhouse_sql.Native, clickhouse_sql.Settings{
 		"allow_experimental_object_type": 1,
+		"allow_experimental_json_type": 1,
 	})
 	defer close(t)
 	val := map[string]interface{}{
